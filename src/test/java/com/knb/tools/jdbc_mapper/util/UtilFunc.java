@@ -1,5 +1,7 @@
 package com.knb.tools.jdbc_mapper.util;
 
+import com.knb.tools.jdbc_mapper.model.Result;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,8 +25,8 @@ public class UtilFunc {
         result.put("DATE_VALUE", new Date());
         result.put("BYTE_VALUE", Byte.MAX_VALUE);
         result.put("WRONG_VALUE", Byte.MAX_VALUE);
-        result.put("CUSTOM_VALUE","Custom Value");
-        result.put("CUSTOM_VALUE_STATIC","Custom Value Static");
+        result.put("CUSTOM_VALUE", "Custom Value");
+        result.put("CUSTOM_VALUE_STATIC", "Custom Value Static");
 
         return result;
     }
@@ -55,5 +57,21 @@ public class UtilFunc {
 
     public static String customMapperStaticMethod(Object value) {
         return "This is custom static mapper. Which is mapping value give from Argument that is  = " + value;
+    }
+
+    public static Result getResult() {
+        Result result = new Result();
+        result.setStrValue("stringValue");
+        result.setNullValue(null);
+        result.setIntValue(Integer.MAX_VALUE);
+        result.setLongValue(Long.MAX_VALUE);
+        result.setShortValue(Short.MAX_VALUE);
+        result.setFloatValue(Float.MAX_VALUE);
+        result.setDoubleValue(Double.MAX_VALUE);
+        result.setBoolValue(true);
+        result.setCharValue(Character.MAX_VALUE);
+        result.setDateValue(new Date());
+        result.setByteValue(Byte.MAX_VALUE);
+        return result;
     }
 }

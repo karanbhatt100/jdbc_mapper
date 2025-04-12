@@ -14,8 +14,8 @@ import java.lang.reflect.Method;
 import java.util.Objects;
 
 @Slf4j
-public class Mapper {
-    private Mapper() {
+public class FieldMapper {
+    private FieldMapper() {
     }
 
     @SuppressWarnings("unchecked")

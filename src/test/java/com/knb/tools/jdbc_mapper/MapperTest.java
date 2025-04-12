@@ -14,7 +14,7 @@ class MapperTest {
     @Test
     void shouldMapValuesSuccessfully() {
         Map<String, Object> result = UtilFunc.getMapWithFieldId();
-        Result mapResult = RowMapper.rowMapper(result, Result.class);
+        Result mapResult = ClassMapper.fromMap(result, Result.class);
 
         assertEquals(result.get("NULL_VALUE"), mapResult.getNullValue());
         assertNull(mapResult.getNullValue());
