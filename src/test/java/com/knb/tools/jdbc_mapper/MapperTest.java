@@ -16,7 +16,6 @@ class MapperTest {
         Map<String, Object> result = UtilFunc.getMapWithFieldId();
         Result mapResult = RowMapper.rowMapper(result, Result.class);
 
-        //System.out.println(new Gson().toJson(mapResult));
         assertEquals(result.get("NULL_VALUE"), mapResult.getNullValue());
         assertNull(mapResult.getNullValue());
         assertEquals(result.get("STR_VALUE"), mapResult.getStrValue());

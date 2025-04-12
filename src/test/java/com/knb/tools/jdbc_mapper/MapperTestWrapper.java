@@ -3,9 +3,9 @@ package com.knb.tools.jdbc_mapper;
 import com.knb.tools.jdbc_mapper.model.ResultWrapped;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class MapperTestWrapper {
+class MapperWrapperTest {
 
     @Test
     void shouldGenerateStringSuccessfully() throws NoSuchFieldException {

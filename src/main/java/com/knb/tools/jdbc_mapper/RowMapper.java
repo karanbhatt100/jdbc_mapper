@@ -3,11 +3,11 @@ package com.knb.tools.jdbc_mapper;
 import com.knb.tools.jdbc_mapper.annotation.FieldId;
 import com.knb.tools.jdbc_mapper.exception.RowMapperFailed;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class RowMapper {
@@ -38,7 +38,7 @@ public class RowMapper {
                 return;
             }
 
-            ReflectionUtils.makeAccessible(field);
+            field.setAccessible(true);
             field.set(newInstance, Mapper.getFieldValue(field, result.get(fieldId)));
         } catch (Exception e) {
             log.error("Mapping field {} failed because {}", field.getName(), e.getMessage());
