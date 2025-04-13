@@ -33,7 +33,7 @@ public class UtilFunc {
 
     public static Map<String, Object> getMapWithVariableName() {
         Map<String, Object> result = new HashMap<>();
-        result.put("strValue", "stringValue");
+        result.put("strValue", "strValue");
 
         result.put("intValue", Integer.MAX_VALUE);
         result.put("longValue", Long.MAX_VALUE);
