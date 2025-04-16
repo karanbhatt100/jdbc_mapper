@@ -9,13 +9,14 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ClassMapperTest {
+class ClassMapperListTest {
 
     @Test
     void shouldGenerateMapSuccessfully() {
         Result result = UtilFunc.getResult();
-        Map<String, Object> value = ClassMapper.toMap(result);
+        List<Map<String, Object>> valueList = ClassMapper.toMap(List.of(result));
 
+        Map<String, Object> value = valueList.getFirst();
         assertEquals(result.getStrValue(), value.get("STR_VALUE"));
         assertEquals(result.getNullValue(), value.get("NULL_VALUE"));
         assertEquals(result.getIntValue(), value.get("INT_VALUE"));
@@ -30,7 +31,7 @@ class ClassMapperTest {
     }
 
     @Test
-    void shouldGenerateMapSuccessfullyForList() {
+    void shouldGenerateMapSuccessfullyByVariable() {
         Result result = UtilFunc.getResult();
         List<Map<String, Object>> valueList = ClassMapper.toMapViaVariable(List.of(result));
 
@@ -47,5 +48,4 @@ class ClassMapperTest {
         assertEquals(result.getDateValue(), value.get("dateValue"));
         assertEquals(result.getByteValue(), value.get("byteValue"));
     }
-
 }

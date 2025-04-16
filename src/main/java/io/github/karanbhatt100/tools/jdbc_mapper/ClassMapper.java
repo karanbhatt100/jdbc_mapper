@@ -13,7 +13,7 @@ public class ClassMapper {
     private ClassMapper() {}
 
     @SuppressWarnings("unchecked")
-    public static <T> Map<String, Object> toMap(Object obj) {
+    public static <T> Map<String, Object> toMapViaVariable(Object obj) {
 
         Map<String, Object> map = new HashMap<>();
 
@@ -29,7 +29,7 @@ public class ClassMapper {
     }
 
     @SuppressWarnings("unchecked")
-    public static <T> List<Map<String, Object>> toMap(List<Object> objList) {
+    public static <T> List<Map<String, Object>> toMapViaVariable(List<Object> objList) {
         List<Map<String, Object>> mapList = new ArrayList<>();
 
         Class<T> cls = (Class<T>) objList.getFirst().getClass();
@@ -47,11 +47,33 @@ public class ClassMapper {
         return mapList;
     }
 
-    public static <T> Map<String, Object> toMap(Object obj, Class<T> classType) {
+    @SuppressWarnings("unchecked")
+    public static <T> List<Map<String, Object>> toMap(List<Object> objList) {
+        List<Map<String, Object>> mapList = new ArrayList<>();
+
+        Class<T> cls = (Class<T>) objList.getFirst().getClass();
+
+        objList.forEach(o -> {
+            Map<String, Object> map = new HashMap<>();
+            Arrays.stream(cls.getDeclaredFields()).toList().forEach(fld -> {
+                if (!fld.isAnnotationPresent(FieldId.class))
+                    return;
+                String fieldId = fld.getAnnotation(FieldId.class).value();
+                Object value = getValue(fld, o);
+                map.put(fieldId, value);
+            });
+            mapList.add(map);
+        });
+
+        return mapList;
+    }
+
+
+    public static <T> Map<String, Object> toMap(Object obj) {
 
         Map<String, Object> map = new HashMap<>();
 
-        Arrays.stream(classType.getDeclaredFields()).toList().forEach(fld -> {
+        Arrays.stream(obj.getClass().getDeclaredFields()).toList().forEach(fld -> {
             if (!fld.isAnnotationPresent(FieldId.class))
                 return;
             String fieldId = fld.getAnnotation(FieldId.class).value();
