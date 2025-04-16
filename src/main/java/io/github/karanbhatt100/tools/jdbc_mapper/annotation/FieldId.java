@@ -1,4 +1,4 @@
-package com.knb.tools.jdbc_mapper.annotation;
+package io.github.karanbhatt100.tools.jdbc_mapper.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

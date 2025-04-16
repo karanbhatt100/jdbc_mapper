@@ -1,7 +1,7 @@
-package com.knb.tools.jdbc_mapper;
+package io.github.karanbhatt100.tools.jdbc_mapper;
 
-import com.knb.tools.jdbc_mapper.model.Result;
-import com.knb.tools.jdbc_mapper.util.UtilFunc;
+import io.github.karanbhatt100.tools.jdbc_mapper.model.Result;
+import io.github.karanbhatt100.tools.jdbc_mapper.util.UtilFunc;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

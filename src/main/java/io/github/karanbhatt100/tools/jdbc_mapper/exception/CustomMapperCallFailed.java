@@ -1,4 +1,4 @@
-package com.knb.tools.jdbc_mapper.exception;
+package io.github.karanbhatt100.tools.jdbc_mapper.exception;
 
 public class CustomMapperCallFailed extends RuntimeException {
 
