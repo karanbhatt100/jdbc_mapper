@@ -80,6 +80,7 @@
     </dependencies>
 
     <build>
+        <finalName>jdbc_mapper_${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
