@@ -30,11 +30,10 @@ class ClassMapperTest {
     }
 
     @Test
-    void shouldGenerateMapSuccessfullyForList() {
+    void shouldGenerateMapSuccessfullyViaVariable() {
         Result result = UtilFunc.getResult();
-        List<Map<String, Object>> valueList = ClassMapper.toMapViaVariable(List.of(result));
+        Map<String, Object> value = ClassMapper.toMapViaVariable(result);
 
-        Map<String, Object> value = valueList.getFirst();
         assertEquals(result.getStrValue(), value.get("strValue"));
         assertEquals(result.getNullValue(), value.get("nullValue"));
         assertEquals(result.getIntValue(), value.get("intValue"));
