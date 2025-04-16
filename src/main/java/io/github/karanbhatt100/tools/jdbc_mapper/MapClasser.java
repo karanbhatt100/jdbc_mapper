@@ -1,8 +1,8 @@
-package com.knb.tools.jdbc_mapper;
+package io.github.karanbhatt100.tools.jdbc_mapper;
 
-import com.knb.tools.jdbc_mapper.annotation.FieldId;
-import com.knb.tools.jdbc_mapper.exception.InstanceCreationFailed;
-import com.knb.tools.jdbc_mapper.exception.RowMapperFailed;
+import io.github.karanbhatt100.tools.jdbc_mapper.annotation.FieldId;
+import io.github.karanbhatt100.tools.jdbc_mapper.exception.InstanceCreationFailed;
+import io.github.karanbhatt100.tools.jdbc_mapper.exception.RowMapperFailed;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Field;

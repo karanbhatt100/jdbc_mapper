@@ -1,12 +1,12 @@
-package com.knb.tools.jdbc_mapper;
+package io.github.karanbhatt100.tools.jdbc_mapper;
 
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Floats;
 import com.google.common.primitives.Ints;
 import com.google.common.primitives.Longs;
-import com.knb.tools.jdbc_mapper.annotation.CustomMapper;
-import com.knb.tools.jdbc_mapper.annotation.FieldId;
-import com.knb.tools.jdbc_mapper.exception.CustomMapperCallFailed;
+import io.github.karanbhatt100.tools.jdbc_mapper.annotation.CustomMapper;
+import io.github.karanbhatt100.tools.jdbc_mapper.annotation.FieldId;
+import io.github.karanbhatt100.tools.jdbc_mapper.exception.CustomMapperCallFailed;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Field;

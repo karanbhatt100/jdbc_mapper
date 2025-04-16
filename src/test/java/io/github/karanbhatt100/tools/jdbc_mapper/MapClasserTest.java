@@ -1,23 +1,21 @@
-package com.knb.tools.jdbc_mapper;
+package io.github.karanbhatt100.tools.jdbc_mapper;
 
-import com.knb.tools.jdbc_mapper.model.Result;
-import com.knb.tools.jdbc_mapper.util.UtilFunc;
+import com.google.gson.Gson;
+import io.github.karanbhatt100.tools.jdbc_mapper.model.Result;
+import io.github.karanbhatt100.tools.jdbc_mapper.util.UtilFunc;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-class MapClasseListTest {
+class MapClasserTest {
 
     @Test
     void shouldMapValuesSuccessfully() {
         Map<String, Object> result = UtilFunc.getMapWithFieldId();
-
-        List<Result> mapResultList = MapClasser.fromMap(List.of(result), Result.class);
-        Result mapResult = mapResultList.getFirst();
+        Result mapResult = MapClasser.fromMap(result, Result.class);
 
         assertEquals(result.get("NULL_VALUE"), mapResult.getNullValue());
         assertNull(mapResult.getNullValue());
@@ -42,9 +40,10 @@ class MapClasseListTest {
     @Test
     void shouldMapValuesSuccessfullyByVariable() {
         Map<String, Object> result = UtilFunc.getMapWithVariableName();
+        Result mapResult = MapClasser.fromMapViaVariable(result, Result.class);
 
-        List<Result> mapResultList = MapClasser.fromMapViaVariable(List.of(result), Result.class);
-        Result mapResult = mapResultList.getFirst();
+        System.out.println(new Gson().toJson(result));
+        System.out.println(new Gson().toJson(mapResult));
 
         assertEquals(result.get("nullValue"), mapResult.getNullValue());
         assertNull(mapResult.getNullValue());

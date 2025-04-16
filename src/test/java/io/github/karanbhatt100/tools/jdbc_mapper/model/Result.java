@@ -1,7 +1,7 @@
-package com.knb.tools.jdbc_mapper.model;
+package io.github.karanbhatt100.tools.jdbc_mapper.model;
 
-import com.knb.tools.jdbc_mapper.annotation.CustomMapper;
-import com.knb.tools.jdbc_mapper.annotation.FieldId;
+import io.github.karanbhatt100.tools.jdbc_mapper.annotation.CustomMapper;
+import io.github.karanbhatt100.tools.jdbc_mapper.annotation.FieldId;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -47,7 +47,7 @@ public class Result {
     private String extraField;
     private String wrongValue;
 
-    @FieldId(value = "CUSTOM_VALUE", customMapper = @CustomMapper(className = "com.knb.tools.jdbc_mapper.util.UtilFunc", methodName = "customMapperMethod", isStatic = false))
+    @FieldId(value = "CUSTOM_VALUE", customMapper = @CustomMapper(className = "io.github.karanbhatt100.tools.jdbc_mapper.util.UtilFunc", methodName = "customMapperMethod", isStatic = false))
     private String customValue;
 
     @FieldId(value = "CUSTOM_VALUE_NO_CLASS", customMapper = @CustomMapper(className = "", methodName = "customMapperMethod"))
@@ -56,6 +56,6 @@ public class Result {
     @FieldId(value = "CUSTOM_VALUE_NO_METHOD", customMapper = @CustomMapper(className = "", methodName = "customValueNoMethod"))
     private String customValueNoMethod;
 
-    @FieldId(value = "CUSTOM_VALUE_STATIC", customMapper = @CustomMapper(className = "com.knb.tools.jdbc_mapper.util.UtilFunc", methodName = "customMapperStaticMethod"))
+    @FieldId(value = "CUSTOM_VALUE_STATIC", customMapper = @CustomMapper(className = "io.github.karanbhatt100.tools.jdbc_mapper.util.UtilFunc", methodName = "customMapperStaticMethod"))
     private String customStaticValue;
 }

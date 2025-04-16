@@ -1,6 +1,6 @@
-package com.knb.tools.jdbc_mapper.util;
+package io.github.karanbhatt100.tools.jdbc_mapper.util;
 
-import com.knb.tools.jdbc_mapper.model.Result;
+import io.github.karanbhatt100.tools.jdbc_mapper.model.Result;
 
 import java.util.Date;
 import java.util.HashMap;

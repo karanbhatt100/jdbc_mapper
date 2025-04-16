@@ -1,7 +1,7 @@
-package com.knb.tools.jdbc_mapper;
+package io.github.karanbhatt100.tools.jdbc_mapper;
 
-import com.knb.tools.jdbc_mapper.annotation.FieldId;
-import com.knb.tools.jdbc_mapper.exception.FieldReadingFailed;
+import io.github.karanbhatt100.tools.jdbc_mapper.annotation.FieldId;
+import io.github.karanbhatt100.tools.jdbc_mapper.exception.FieldReadingFailed;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Field;

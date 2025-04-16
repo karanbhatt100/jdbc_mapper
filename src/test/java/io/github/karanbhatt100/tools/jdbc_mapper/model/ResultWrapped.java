@@ -1,6 +1,6 @@
-package com.knb.tools.jdbc_mapper.model;
+package io.github.karanbhatt100.tools.jdbc_mapper.model;
 
-import com.knb.tools.jdbc_mapper.annotation.FieldId;
+import io.github.karanbhatt100.tools.jdbc_mapper.annotation.FieldId;
 import lombok.Getter;
 import lombok.Setter;
 
