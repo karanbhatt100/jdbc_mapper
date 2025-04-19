@@ -48,7 +48,7 @@ public class ClassMapper {
     }
 
     @SuppressWarnings("unchecked")
-    public static <T> List<Map<String, Object>> toMap(List<Object> objList) {
+    public static <T> List<Map<String, Object>> toMap(List<T> objList) {
         List<Map<String, Object>> mapList = new ArrayList<>();
 
         Class<T> cls = (Class<T>) objList.getFirst().getClass();
@@ -69,7 +69,7 @@ public class ClassMapper {
     }
 
 
-    public static <T> Map<String, Object> toMap(Object obj) {
+    public static Map<String, Object> toMap(Object obj) {
 
         Map<String, Object> map = new HashMap<>();
 
