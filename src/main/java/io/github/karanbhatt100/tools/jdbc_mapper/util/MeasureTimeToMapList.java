@@ -53,7 +53,7 @@ public class MeasureTimeToMapList {
     public static <T> String measureExecutionTime(Class<T> classType, int size) {
 
         StringBuilder text = new StringBuilder();
-        text.append("listSize, timeInNano, timeInMilli, timeInSecond");
+        text.append("listSize,timeInNano,timeInMilli,timeInSecond");
         generateRange(size).forEach(i -> {
             List<T> result = Instancio.ofList(classType).size(size).create();
             long time = executeToMap(result);
