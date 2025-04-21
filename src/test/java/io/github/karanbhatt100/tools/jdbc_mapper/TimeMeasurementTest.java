@@ -4,7 +4,6 @@ import io.github.karanbhatt100.tools.jdbc_mapper.model.Result;
 import io.github.karanbhatt100.tools.jdbc_mapper.util.MeasureTimeToMapList;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 class TimeMeasurementTest {
