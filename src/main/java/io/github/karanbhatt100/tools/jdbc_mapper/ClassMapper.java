@@ -33,10 +33,11 @@ public class ClassMapper {
         List<Map<String, Object>> mapList = new ArrayList<>();
 
         Class<T> cls = (Class<T>) objList.getFirst().getClass();
+        List<Field> fldList = Arrays.stream(cls.getDeclaredFields()).toList();
 
         objList.forEach(o -> {
             Map<String, Object> map = new HashMap<>();
-            Arrays.stream(cls.getDeclaredFields()).toList().forEach(fld -> {
+            fldList.forEach(fld -> {
                 String fieldName = fld.getName();
                 Object value = getValue(fld, o);
                 map.put(fieldName, value);
@@ -52,12 +53,11 @@ public class ClassMapper {
         List<Map<String, Object>> mapList = new ArrayList<>();
 
         Class<T> cls = (Class<T>) objList.getFirst().getClass();
+        List<Field> fieldList = Arrays.stream(cls.getDeclaredFields()).toList().stream().filter(f -> f.isAnnotationPresent(FieldId.class)).toList();
 
         objList.forEach(o -> {
             Map<String, Object> map = new HashMap<>();
-            Arrays.stream(cls.getDeclaredFields()).toList().forEach(fld -> {
-                if (!fld.isAnnotationPresent(FieldId.class))
-                    return;
+            fieldList.forEach(fld -> {
                 String fieldId = fld.getAnnotation(FieldId.class).value();
                 Object value = getValue(fld, o);
                 map.put(fieldId, value);
@@ -72,10 +72,9 @@ public class ClassMapper {
     public static Map<String, Object> toMap(Object obj) {
 
         Map<String, Object> map = new HashMap<>();
+        List<Field> fieldList = Arrays.stream(obj.getClass().getDeclaredFields()).toList().stream().filter(f -> f.isAnnotationPresent(FieldId.class)).toList();
 
-        Arrays.stream(obj.getClass().getDeclaredFields()).toList().forEach(fld -> {
-            if (!fld.isAnnotationPresent(FieldId.class))
-                return;
+        fieldList.forEach(fld -> {
             String fieldId = fld.getAnnotation(FieldId.class).value();
             Object value = getValue(fld, obj);
             map.put(fieldId, value);
