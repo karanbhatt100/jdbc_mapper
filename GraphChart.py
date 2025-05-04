@@ -14,6 +14,7 @@ list_size = 'listSize'
 
 def print_average(dict_by_ele_size):
     _dict = {}
+    dict_by_ele_size = dict(sorted(dict_by_ele_size.items(), key=lambda item: int(item[0])))
     for k, v in dict_by_ele_size.items():
         print(f"Average time to create list of size {k} is {np.average(v)} in {read_col}")
         _dict[k] = math.floor(np.average(v))
@@ -49,10 +50,9 @@ average_size_dict = print_average(combined_data)
 
 plt.bar(average_size_dict.keys(), average_size_dict.values(), label='Data')
 
-plt.xlabel('Total List Size')
+plt.xlabel('List Size')
 plt.ylabel('Time In Nanosecond')
 plt.title('Line Chart from Multiple CSV Files')
 mplcursors.cursor(hover=True)
-#plt.xticks(list_elements)
 plt.legend()
 plt.show()

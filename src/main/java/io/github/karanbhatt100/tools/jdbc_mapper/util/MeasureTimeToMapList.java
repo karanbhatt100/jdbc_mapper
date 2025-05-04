@@ -24,12 +24,14 @@ public class MeasureTimeToMapList {
     public static <T> void measureExecutionTime(Class<T> classType, int size, String filePath, int totalCycle) {
         IntStream.range(0, totalCycle).forEach(i -> {
             try {
+                log.info("Running cycle {}", i);
                 Files.createDirectories(Paths.get(filePath));
                 File file = new File(filePath + File.separator + "RunCycle_" + i + ".csv");
                 String output = measureExecutionTime(classType, size);
                 PrintWriter writer = new PrintWriter(file, StandardCharsets.UTF_8);
                 writer.println(output);
                 writer.close();
+                log.info("Cycle {} completed", i);
             } catch (Exception e) {
                 throw new MeasureTimeFails(e);
             }
