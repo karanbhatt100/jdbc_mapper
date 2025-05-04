@@ -62,22 +62,41 @@ List<Map<String, Object>> valueList = ClassMapper.toMapViaVariable(List.of(resul
 ## Average time calculation
 # Release 1.0
 Average time to create list of size 1 is 1481097240.0 in timeInNano
+
 Average time to create list of size 2 is 1482473920.0 in timeInNano
+
 Average time to create list of size 4 is 1498339760.0 in timeInNano
+
 Average time to create list of size 8 is 1448431220.0 in timeInNano
+
 Average time to create list of size 16 is 1491154200.0 in timeInNano
+
 Average time to create list of size 32 is 1503094380.0 in timeInNano
+
 Average time to create list of size 64 is 1505589900.0 in timeInNano
+
 Average time to create list of size 128 is 1595871920.0 in timeInNano
+
 Average time to create list of size 256 is 1564325900.0 in timeInNano
+
 Average time to create list of size 512 is 1583432660.0 in timeInNano
+
 Average time to create list of size 1024 is 1466816260.0 in timeInNano
+
 Average time to create list of size 2048 is 1554808340.0 in timeInNano
+
 Average time to create list of size 4096 is 1528872960.0 in timeInNano
+
 Average time to create list of size 8192 is 1541723180.0 in timeInNano
+
 Average time to create list of size 16384 is 1571499560.0 in timeInNano
+
 Average time to create list of size 32768 is 1595847320.0 in timeInNano
+
 Average time to create list of size 65536 is 1524846920.0 in timeInNano
+
 Average time to create list of size 131072 is 1519164740.0 in timeInNano
+
 Average time to create list of size 262144 is 1428613360.0 in timeInNano
+
 Average time to create list of size 524288 is 1489660980.0 in timeInNano
